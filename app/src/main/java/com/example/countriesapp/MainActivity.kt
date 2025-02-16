@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
                 binding.areaTextView.text = country.area.toString()
                 binding.langTextView.text = country?.languages?.values?.firstOrNull() ?: "Нет данных"
 
+                // проверка комита
             }
 
         }
