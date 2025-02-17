@@ -36,17 +36,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/country_name_edit_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/country_name_textWiew"
+        android:id="@+id/country_name_text_Wiew"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="50dp"
         android:text="    "
         android:textSize="20sp"
         android:textStyle="bold"
@@ -61,7 +62,7 @@
         android:layout_marginTop="8dp"
         android:text="Столица:"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/country_name_textWiew" />
+        app:layout_constraintTop_toBottomOf="@+id/country_name_text_Wiew" />
 
     <TextView
         android:id="@+id/capital_textView"

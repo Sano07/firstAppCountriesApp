@@ -53,6 +53,8 @@ dependencies {
     implementation(libs.kotlinx.coroutines.core.v1101)
     implementation(libs.kotlinx.coroutines.android.v1101)
     implementation(libs.androidx.appcompat.v141)
+    implementation(libs.coil.compose)
+    implementation(libs.coil.svg)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

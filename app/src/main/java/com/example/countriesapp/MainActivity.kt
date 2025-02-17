@@ -16,6 +16,8 @@ import androidx.lifecycle.lifecycleScope
 import com.example.countriesapp.databinding.ActivityMainBinding
 import com.example.countriesapp.ui.theme.CountriesAppTheme
 import kotlinx.coroutines.launch
+import java.text.NumberFormat
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -28,16 +30,22 @@ class MainActivity : AppCompatActivity() {
             val countryName : String = binding.countryNameEditText.text.toString()
 
             lifecycleScope.launch {
-                val countries = restCountriesAPI.getCountryByName(countryName)
-                val country = countries[0]
+                try {
+                    val countries = restCountriesAPI.getCountryByName(countryName)
+                    val country = countries[0]
 
-                binding.countryNameTextWiew.text = country.name.common
-                binding.capitalTextView.text = country.capital[0]
-                binding.populationTextView.text = country.population.toString()
-                binding.areaTextView.text = country.area.toString()
-                binding.langTextView.text = country?.languages?.values?.firstOrNull() ?: "Нет данных"
+                    binding.countryNameTextWiew.text = country.name.common
+                    binding.capitalTextView.text = country.capital[0]
+                    binding.populationTextView.text =
+                        NumberFormat.getInstance(Locale("ru", "RU")).format(country.population)
+                    binding.areaTextView.text =
+                        NumberFormat.getInstance(Locale("ru", "RU")).format(country.area)
+                    binding.langTextView.text = convert(country.languages)
 
-                // проверка комита
+                    loadSvg(binding.imageView, getFlag(country.flags))
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
             }
 
         }
