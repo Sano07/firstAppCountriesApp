@@ -1,5 +1,6 @@
 [versions]
 agp = "8.8.0"
+androidsvg = "1.4"
 appcompatVersion = "1.4.1"
 coilCompose = "3.1.0"
 converterGson = "2.11.0"
@@ -19,10 +20,12 @@ activityCompose = "1.10.0"
 composeBom = "2024.04.01"
 constraintlayout = "2.2.0"
 lifecycleRuntimeKtxVersion = "2.3.1"
+picasso = "2.8"
 retrofit = "2.11.0"
 appcompat = "1.7.0"
 
 [libraries]
+androidsvg = { module = "com.caverock:androidsvg", version.ref = "androidsvg" }
 androidx-appcompat-v141 = { module = "androidx.appcompat:appcompat", version.ref = "appcompatVersion" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-lifecycle-runtime-ktx-v231 = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtxVersion" }
@@ -49,6 +52,7 @@ kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutine
 kotlinx-coroutines-android-v1101 = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroidVersion" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
 kotlinx-coroutines-core-v1101 = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCoreVersion" }
+picasso = { module = "com.squareup.picasso:picasso", version.ref = "picasso" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 retrofit2-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }

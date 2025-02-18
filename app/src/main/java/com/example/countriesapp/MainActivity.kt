@@ -1,6 +1,7 @@
 package com.example.countriesapp
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -42,10 +43,17 @@ class MainActivity : AppCompatActivity() {
                         NumberFormat.getInstance(Locale("ru", "RU")).format(country.area)
                     binding.langTextView.text = convert(country.languages)
 
-                    loadSvg(binding.imageView, getFlag(country.flags))
+                    loadSvgWithPicasso(binding.imageFlagView, getFlag(country.flags))
+
+                    binding.resultLayout.visibility = View.VISIBLE
+                    binding.startLayout.visibility = View.INVISIBLE
                 } catch (e: Exception) {
                     e.printStackTrace()
+
+                    binding.errorLayout.visibility = View.VISIBLE
+                    binding.resultLayout.visibility = View.INVISIBLE
                 }
+
             }
 
         }
