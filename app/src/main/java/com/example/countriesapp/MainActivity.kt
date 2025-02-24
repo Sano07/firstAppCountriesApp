@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                         NumberFormat.getInstance(Locale("ru", "RU")).format(country.area)
                     binding.langTextView.text = convert(country.languages)
 
-                    loadSvgWithPicasso(binding.imageFlagView, getFlag(country.flags))
+                    loadSvgWithPicasso(binding.flagView, getFlag(country.flags))
 
                     binding.resultLayout.visibility = View.VISIBLE
                     binding.startLayout.visibility = View.INVISIBLE
